@@ -12,7 +12,7 @@ define Package/$(PKG_NAME)
 	CATEGORY:=Mypackages
 	TITLE:=wss
 	MAINTAINER:=zengming00@gmail.com
-	DEPENDS:=+liblua +ipset +lua-coxpcall +lua-copas +luabitop +luasocket +lua-md5
+	DEPENDS:=+liblua
 endef
 
 define Package/$(PKG_NAME)/description

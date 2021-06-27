@@ -1,14 +1,5 @@
 #!/usr/bin/lua
 
--- 不支持ipv6，需要把路由器关掉ipv6
--- opkg install ipset luabitop luasocket lua-copas lua-coxpcall
---[[
-lua-coxpcall	1.17.0-1
-lua-copas	2.0.2-1
-luabitop	1.0.2-1
-luasocket	2019-04-21-733af884-1
-lua         5.1.5-8
---]] --
 local cfg = dofile('/etc/config.lua')
 local redirPort = cfg.redirPort
 local udpPort = cfg.udpPort
