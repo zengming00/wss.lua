@@ -351,10 +351,14 @@ end
 
 local function socks5Handler(rawc)
     local c = copas.wrap(rawc)
-    local r = assert(c:receive(3))
+    local r = assert(c:receive(2)) -- curl支持多种认证方式，因此需要排空收到的认证方式列表
     if b(r, 1) ~= 5 then
         print('socks5 version err')
         return
+    end
+    local nmethods = b(r, 2)
+    if nmethods > 0 then
+        assert(c:receive(nmethods))
     end
     c:send("\5\0")
 
